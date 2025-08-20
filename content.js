@@ -21,18 +21,17 @@ if (window.location.hostname.includes('github.com')) {
         transform: translateY(20px);
         z-index: 9999;
     `;
-    
+
     // 添加到页面
     document.body.appendChild(button);
-    
+
     // 点击按钮回到顶部
     button.addEventListener('click', () => {
         window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+            top: 0, behavior: 'smooth'
         });
     });
-    
+
     // 监听滚动事件，控制按钮显示/隐藏
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) { // 当滚动超过300px时显示按钮
@@ -45,13 +44,12 @@ if (window.location.hostname.includes('github.com')) {
             button.style.transform = 'translateY(20px)';
         }
     });
-    
+
     // 接收来自popup的消息
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === "scrollToTop") {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+                top: 0, behavior: 'smooth'
             });
         }
     });
