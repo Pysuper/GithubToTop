@@ -4,8 +4,7 @@
   "version": "1.1",
   "description": "在GitHub网站显示一个一键回到顶部的按钮，提升浏览体验",
   "permissions": [
-    "activeTab",
-    "scripting"
+    "activeTab"
   ],
   "action": {
     "default_popup": "popup.html",
